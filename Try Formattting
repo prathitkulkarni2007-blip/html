@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>replit</title>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <!--Let's try using various headings and paragraph -->
+        <b>Welcome to Codingal.. Let's get started with Coding</b><br> <strong>Welcome to Codingal..Let's get started with Coding</strong><br>
+<i>Welcome to Codingal..Let's get started with Coding</i><br>
+<em>Welcome to Codingal..Let's get started with Coding</em><br>
+<mark>Welcome to Codingal..Let's get started with Coding </mark><br>
+<small>Welcome to Codingal..Let's get started with Coding</small><br>
+<del>Welcome to Codingal.. Let's get started with Coding</del><br>
+Welcome to<sup>Codingal</sup>.Let's get started with <sub>Codingal</sub><br>
+    </body>
+</html>
