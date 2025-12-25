@@ -1,44 +1,52 @@
-
 <!DOCTYPE html>
-<html>
-<head>
-  <style>
- div.relative {
-     position: relative;
-     left: 30px;
-     border: 3px solid #73AD21;
-}
-div.fixed {
-  position: fixed;
-  left: 30px;
-  border: 3px solid #73AD21;
-}
-div.absolute {
-    position: absolute;
-    left: 30px;
-    border: 3px solid #73AD21;
-}
-div static{
-    position: static;
-    left: 30px;
-    border: 3px solid #73AD21;
-}
-</style>
-</head>
- <body>
- <h2>positions</h2>
- <p>An element with positon: relative; is positioned relative to its normal position:</p>
- <div class="relative">
-    This div element has position: relative;
- </div><br><br>
- <div class="fixed">
-    This div element has position: fixed;
- </div><br><br>
- <div class="absolute">
-    This div element position: absolute;
- </div><br><br>
- <div class="static">
-    This div element has position: static;
- </div>
-</body>
+<html lang="en">
+   <head>
+      <title>Grid Example</title>
+      <meta charset="utf-8">
+      <meta name="viewport" contect="width=device-width,initial-scale=1">
+      <link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+      <style type="text/css">
+         h1 {
+            color:green:
+         }
+         #al, #a4 {
+            color: white;
+            background: olive;
+            font-size: 20px;
+         }
+         #a2, #a5 {
+            color: white;
+            background: maroon;
+            font-size: 20px;
+          }
+          #a3, #a6 {
+            color: white;
+            background: fuchsia;
+            font-size: 20px;
+          }
+
+      </style>
+   </head>
+   <body>
+      <div class="container-fluid">
+         <!--class="container-fluid" provides full width page-->
+         <h1>Unequal Area Grids</h1>
+         <div class="row">
+            <div id="al" class="col-sm-3"">Adding 1-3 grids</div>
+            <div id="a2" class="col-sm-4">Adding 4-7 grids</div>
+            <div id="a3" class="col-sm-5">Adding 8-12 grids</div>
+         </div>
+         <div class="row">
+            <div id="a4" class="col-sm-2"">Adding 1-2 grids</div>
+            <div id="a5" class="col-sm-6"">Adding 3-8 grids</div>
+            <div id="a6" class="col-sm-4"">Adding 9-12 grids</div>
+         </div>
+      </div>
+   </body>
 </html>
