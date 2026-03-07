@@ -1,0 +1,22 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class Customer extends React.Component {
+    render() {
+     return <h2>I am from {this.props.city}! </h2>;
+    }
+  }
+
+class Details extends React.Component {
+  render() {
+    const cityname = {city: 'Bangalore', country: 'India'};
+    return (
+    <div>
+    <h1>Hello</h1>
+    <Customer customerDetails={customerInfo} />
+    </div>
+    );
+   }
+ }
+
+ ReactDOM.render(<Details />, document.getElementById('root'));
