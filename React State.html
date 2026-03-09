@@ -1,0 +1,11 @@
+namechange = () => {
+    const newname = this.state.name === "Dark Chocolate"
+    ? "Milk Chocolate" : "Dark Chocolate";
+    const newprice = this.state.name === "Dark Chocolate" ? 100 : 150;
+    const newtoppings = this.state.name === "Dark Chocolate" ? "No" : "Fruit and Nut";
+    this.setState({
+        name: newname,
+        price: newprice,
+        toppings: newtoppings
+    });
+}
