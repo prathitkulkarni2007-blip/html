@@ -14,6 +14,6 @@ while True:
       t.right(239)
       for x in range(200, 0, -1):
          t.pencolor('black')
-         t.pencolor(x/100 + 7)
+         t.width(x/100 + 7)
          t.forward(x)
          t.right(59)
