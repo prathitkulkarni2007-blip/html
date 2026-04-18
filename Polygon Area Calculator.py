@@ -1,43 +1,21 @@
-# import necessary packages
- from abc import ABC, abstractmethod
- # create a base class
- class Animal(ABC):
- 
-     # abstract method 
-     # should be implemented by all sub-classes
-     def move(self):
-         pass
-     
-     # sub classes
-     class Human(Animal):
+class Computer:
 
-        def move(self):
-           print("I can walk and run")
+    def _init_(self):
+        self.__maxprice = 900
 
- class Snake(Animal):
-   
-   def move(self):
-      print("I can crawl")
+    def sell(self):
+        print("Selling Price: {}".format(self.__maxprice))
 
-    class Dog(Animal):
-      
-      def move(self):
-          print("I can bark")
+    def seetMaxPrice(self, price):
+        self.__maxprice = price
 
-    class Lion(Animal):
-      
-      def move(self):
-          print("I can roar")
+    c = Computer()
+    c.sell()
 
-   # Driver code
-   R = Human()
-   R.move()
+    # change the price
+    c.__maxprice = 1000
+    c.sell()
 
-   K = Snake()
-   K.move()
-
-   R = Dog()
-   R.move()
-
-   K = Lion()
-   K.move()
+    # using setter function
+    c.setMaxPrice(1000)
+    c.sell()
