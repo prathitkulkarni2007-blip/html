@@ -1,23 +1,19 @@
- #create a new file
- new_file = open('New_File.txt','x')
- new_file.close()
- 
- #check if a file exists
- import os
- print("Checking if my_file exists or not....")
- if os.path.exists("my_file.txt"):
-  os.remove("my_file.txt")
- else:
-   print("The file does not exist")
+  # Program to merge two file into a third file
 
-   #create a new if it doesn't
-   my_file = open("my_file.txt","w")
-   my_file.write("Hi! I am Penguin and I am 1 yr old.")
-   my_file.close()
 
-   #delete file named codingal
-   os.remove('Codingal.txt')
+  # Reading data from file1
+  with open('Codingal.txt') as fp:
+       data1 = fp.read()
 
-   #delete the folder
-   os.rmdir('Folder')
-   
+  # Reading date from file2
+  with open('sample_doc.txt') as fp:
+    data2 = fp.read()
+
+  # Merging 2 files
+  # To add the data of file2
+  # from next line
+  data1 += "\n"
+  data1 += data2
+  print("Merging two files....")
+  with open ('MergedFile.txt', 'w') as fp:
+       fp.write(data1)
