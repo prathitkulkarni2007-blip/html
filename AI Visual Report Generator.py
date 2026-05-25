@@ -1,0 +1,2 @@
+mkdir ai_visual_report_generator
+cd ai_visual_report_generator
