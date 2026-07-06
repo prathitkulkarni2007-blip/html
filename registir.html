@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="static/styles/style.css"></link>
+  </head>
+  <body>
+     <div align="center">
+     <div align="center" class="border">
+     <div class="header">
+     <h1 class="word">Login</h1>
+     </div>
+     <h2 class="word">
+     <form action="/login" method="Post">
+     <div class="msg">{{msg}}</div>
+     <input id="username" name="username" type="text"  placeholder="Enter your username" class="textbox"></br></br>
+     <input id="password" name="password" type="password" placeholder="Enter your Password" class="textbox"></br></br>
+     <input type="submit" value="Sign In" class="btn"></br></br>
+     </form>
+     </h2>
+     <p class="bottom">Don't have account? <a class="bottom" href=/register"> Sign up here</a></p>
+      </div>
+      </div>
+  </body>
+  </html>
+  <body>
+    <div align="center">
+    <div align="center" class="border">
+    <div class="header">
+    <h1 class="word">Register</h1>
+    </div>
+    <h2 class="word">
+    <form action="/register" method="Post">
+    <div class="msg">{{msg}}</div>
+    <input id="username" name="username" type="text" placeholder="Enter your username" class="textbox"></br></br>
+    <input id="password" name="password" type="text" placeholder="Enter your Password" class="textbox"></br></br>
+    <input id="email" name="email" type="text" placeholder="Enter your Email" class="textbox"></br></br>
+    <input type="submit" value="Sign Up" class="btn"></br></br>
+    </form>
+    </h2>
+    <p class="bottom"> Already have account? <a class="bottom" href="/login"> Sign In here</a></p>
+    </div>
+    </div>
+  </body>
+  </html>
+  <html>
+  <head>
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css"></link>
+  </head>
+  <body>
+    <div align="center">
+    <div align="center" class="border">
+    <div class="header">
+    <h1 class="word">Welcome</h1>
+    </div>
+    <h1 class="bottom">Hi {{name}}!! </br> </br>
+    {{msg}} !! </br> </br>
+    You are Welcome</br> </br>
+    Happy to have you here...</h1>
+    <a href="/logout" class="btn">Log Out</a>
+    </div>
+    </div>
+  </body>
+  </html>
