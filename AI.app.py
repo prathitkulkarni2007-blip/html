@@ -1,61 +1,43 @@
-    # TODO 1
-    HCAPTCHA_SECRET          = os.environ.get("HCAPTCHA_SECRET","0x0000000000000000000000000000")
-    HCAPTCHA_VERIFY_URL   = "https://api.hcaptcha.com/siteverify"
-    
-    # TODO 2
-    def verify_hcaptcha(token):
-        try:
-            r = requests.post(HCAPTCHA_VERIFY_URL,
-                              data={"secret": HCAPTCHA_SECRET, "response": token},timeout=5)
-            return r.json().get("success", False)
-          except Exception:
-              return False
-        
-    
-    # TODO 3
-    token = data.get("h-captcha-response", "")
-       if not token:
-           return jsonify({"error": "Please complete the CAPTCHA"}), 400
-       if not verify_hcaptcha(token):
-           return jsonify({"error": "CAPTCHA verification failed."}), 400
-             // TODO 1
-   window.hcaptchaReady = () => {
-      captchaWidgetId = hcaptcha.render('hcaptchaWidget', {
-        sitekey: window.HCAPTCHA_SITE_KEY, theme: 'dark', size: 'compact',
-        callback: token => { captchaModal.classList.add('hidden'); runGeneration(token); },
-        'expired-callback': () => { captchaModal.classList.add('hidden'); generateBtn.disabled = false; formError.textContent = 'CAPTCHA expired'; },
-      });
-   };
- // TODO 2
-    generateBtn?.addEventListener('click', () => {
-      formError.textContent = '';
-      if (typeof hcaptcha === 'undefined' || captchaWidgetId === null) {formError.textContent = 'CAPTCHA not loaded. Refresh.'; return; }
-      hcaptcha.reset(captchaWidgetId);
-      captchaModal.classList.remove('hidden');
-    });
-
-    // TODA 3
-      captchaCancel?.addEventListener('click', () => { captchaModal.classList.add('hidden'); hcaptcha?.reset(captchaWidgetId); });
+  # TODA 1
+  from flask import Flask, render_template, request, jsonify, session, redirect, url_for
+  from datetime import datetime
 
 
-    // TODA 4
-    const runGeneration = async token => {
-        const prefs = collectPrefs();
-        generateBtn.disabled = true;
-        setTimeout('loading'); setStage('groq'); starLoader();
-        try {
-          const r = await fetch('/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...prefs,'h-captcha-response':token})}); Type':'application/json'},body:JSON.stringify({...prefs,'h-captcha-response':token})});
-          const d = await r.json();
-          if (!r.ok||d.error) throw new Error(d.error||'Server error');
-          stopLoader(); renderConcept(d.concept); setUI('result');
-          fetchImage(d.Concept.image_prompt || `Premium ${prefs.style} sneaker, ${prefs.materials}, studio photography, 8k`);
-        } catch(e) {
-          stopLoader(); setUI('empty'); formError.textContent = e.message||'Something went wrong.';
-        } finally {
-          generateBtn.disabled = false;
-          if (typeof hcaptcha!=='undefined' && captchaWidgetId!==null) hcaptcha.reset(captchaWidgetId);
-        }
-    };
+  # TODA 2
+  def save_to_history(concept, prefs, image_url=None):
+      session.setdefault("history", [])
+      entry = {
+          "id":        str(uuid.uuid4())[:8],
+          "timestamp": datetime.now().strftime("%b %d, %Y . %I:%M %p"),
+          "concept":   concept,
+          "prefs":     prefs,
+          "image_url": image_url,
+      }
+      session["history"] = ([entry] + session["history"])[:20]
 
-    regenImgBtn?.addEventListener('click', () => currentConcept && fetchImage(currentConcept.image_prompt||`Premium sneaker, ${currentConcept.name||'sneaker'}, studio, 8k`));
-    reganBtn?.addEventListener('click', () => { formError.textContent=''; setUI('empty'); currentConcept=null; document.querySelector('.form-panel')?.scrollIntoView({behavior:'smooth'});}):
+
+
+    # TODA 3
+    designs=session.get("history", [])
+
+
+   # TODA 4
+   @app.route("/clear-history", methods=["POST"])
+   def clear_history():
+       session.pop("history", None)
+       return redirect(url_for("history"))
+
+
+   # TODA 5
+   save_to_history(concept, prefs)
+
+
+  # TODA 6
+  if history_id and "history" in session:
+          for entry in session["history"]:
+              if entry["id"] == history_id:
+                  entry["image_url"] = image_url
+                  break
+           session.modified = True
+    // TODA 1
+     regenBtn?.addEventListener('click', () => { formError.textContent=''; setUI('empty'); currentConcept=null; document.querySelector('.form-panel')?.scrollIntoView({behavior:'smooth'}); });
