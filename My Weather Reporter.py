@@ -6,7 +6,7 @@
 
   # PART 1 - USER INPUT
   city = input("Enter your city name: ")
-  temp = float(input("Enter your city name: ")
+  temp = float(input("Enter today's temperature in C: "))
                
 
   # PART 2 - if STATEMENT
