@@ -1,28 +1,40 @@
-1st = ['Apple', 'Guava', 'Mango', 'Banana', 'Kiwi']
+ # ----- School Class Organiser ----
 
-print("Length of list:", len(1st))
-print("First Element:", 1st[0])
-print("Last Element:", 1st[-1])
+  # STEP 1 - Create a list of classmates
+  classmates = ["Aarav", "Priya", "Rahul", "Sneha", "Dev"]
+  print("Class list:", classmates)
 
-1st.append('Papaya')
-print("Undated List :", 1st)
+  # STEP 2 - Access the list
+  print("Total students:", len(classmates))
+  print("First student:", classmates[0])
+  print("Last student:", classmates[-1])
+  print("First three:", classmates[:3])
 
-1st.remove('Guava')
-print("Updated List :", 1st)
+  # STEP 3 - Modify the list
+  classmates.append("Meera")
+  print("\nAfter adding Meera:", classmates)
+  classmates.remove("Dev")
+  print("After removing Dev:", classmates)
+  classmates.sort()
+  print("Sorted alphabetically:", classmates)
+  classmates.reverse()
+  print("Reversed:", classmates)
 
-1st.sort()
-print("Sorted List:", 1st)
+  # STEP 4 - Create a teacher dictionary
+  teacher = {"name": "Mr. Sharma", "subject": "Python", "experience": 5}
+  print("\nTeacher profile:", teacher)
 
-1st.pop(1)
-print("Updated List :", 1st)
+  # STEP 5 - Dictionary operations
+  print("Subject:", teacher["subject"])
+  print("Experience:", teacher.get("experience", "Not found"))
+  teacher["experience"] = 6
+  teacher["email"] = "sharma@school.com"
+  teacher.pop("experience")
+  print("Updated teacher profile:", teacher)
 
-1st.reverse()
-print("Reversed List :", 1st)
-
-print("Multiplication on List :", 1st*2)
-
-1st = 1st[:4]
-print("Sliced List:", 1st)
-
-1st.clear()
-print("Updated List :", 1st)
+  # STEP 6 - Convert lists to a student directory
+  roll_numbers = [1, 2, 3, 4, 5]
+  names = ["Aarav", "Priya", "Rahul", "Sneha", "Meera"]
+  student_directory = dict(zip(roll_numbers, names))
+  print("\nStudent Directory:", student_directory)
+  print("Student at Roll 3:", student_directory[3])
