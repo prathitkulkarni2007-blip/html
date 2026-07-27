@@ -1,7 +1,9 @@
  # ----- School Class Organiser ----
 
   # STEP 1 - Create a list of classmates
-  classmates = ["Aarav", "Priya", "Rahul", "Sneha", "Dev"]
+  classmates = ["Aarav", "Priyaka
+  ", "Rahul", "Snehalata
+  ", "Dev"]
   print("Class list:", classmates)
 
   # STEP 2 - Access the list
