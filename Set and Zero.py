@@ -1,4 +1,4 @@
-  # 01-set-and-power .py
+  # 02-set-and-power .py
   # Topic: Set Bits and Zero Bits, Power of 2 Check
   
   input("Set a bit - OR turns it ON. Press Enter ")
@@ -15,4 +15,9 @@
   if n > 0 and (n & (n - 1)) == 0:
       print(" ", n, " binary:", bin(n)[2:], " power of 2 your guess:", guess)
   else:
-      print(" ", n, " binary:", bin(n)[2:], " not power of 2 your guess:", guess)
+      print(" ", n, " binary:", bin(n)[2:], " not power of 2 your guess:", temp & 1)
+      if temp & 1:
+          break
+      pos += 1
+      temp >>= 1
+  print("  first set bit in", n, "is at position", pos)
